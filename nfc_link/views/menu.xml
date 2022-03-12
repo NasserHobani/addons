@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem
+                id="nfc_menu_root"
+                name="NFC"
+                sequence="20"
+                groups="base.group_user"
+        />
+        <menuitem
+                id="nfc_menu"
+                name="NFC"
+                sequence="1"
+                parent="nfc_menu_root"
+        />
+    </data>
+</odoo>

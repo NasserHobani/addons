@@ -1,0 +1,88 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="nfc_link.form">
+            <field name="name">nfc_link form</field>
+            <field name="model">nfc_link.nfc_link</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="partner_id"/>
+                            <field name="nf_type"/>
+                            <field name="nf_qr_id"/>
+                            <field name="nf_card_id"/>
+                            <field name="action_type"/>
+                            <field name="instagram_link"/>
+                            <field name="instagram_user"/>
+                            <field name="whatspp_link"/>
+                            <field name="whatsapp_user"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="nfc_link.list">
+            <field name="name">nfc_link list</field>
+            <field name="model">nfc_link.nfc_link</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="partner_id"/>
+                    <field name="nf_card_id"/>
+                    <field name="nf_qr_id"/>
+                    <field name="nf_type"/>
+                    <field name="action_type"/>
+                    <field name="instagram_user"/>
+                    <field name="whatsapp_user"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="nfc_link.action_window">
+            <field name="name">nfc_link window</field>
+            <field name="res_model">nfc_link.nfc_link</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <record id="abazeer_p_c_l_product_view" model="ir.ui.view">
+            <field name="name">abazeer_p_c_l_product_view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page name="nfc" string="NFC">
+                        <field name="nfc_ids" widget="section_and_note_one2many"
+                               mode="tree,kanban">
+                            <tree string="Promotion Line" editable="bottom">
+                                <control>
+                                    <create name="add_product_control" string="Add a NFC"/>
+                                </control>
+                                <field name="partner_id" />
+                                <field name="nf_type"/>
+                                <field name="nf_card_id"/>
+                                <field name="nf_qr_id"/>
+                                <field name="action_type"/>
+                                <field name="instagram_user"/>
+                                <field name="whatsapp_user"/>
+
+                            </tree>
+
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        <menuitem name="NFC Partner" id="nfc_partner" parent="nfc_menu"
+                  action="nfc_link.action_window"/>
+        <!--    <menuitem name="Server to list" id="nfc_link" parent="nfc_link.menu_2"-->
+        <!--              action="nfc_link.action_server"/>-->
+
+    </data>
+</odoo>

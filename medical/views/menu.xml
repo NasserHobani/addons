@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem
+                id="medical_menu_root"
+                name="Medical"
+                sequence="20"
+                groups="base.group_user"
+        />
+        <menuitem
+                id="medical_menu"
+                name="Medical"
+                sequence="1"
+                parent="medical_menu_root"
+        />
+        <menuitem
+                id="medical_config_menu"
+                name="Configuration"
+                sequence="1"
+                parent="medical_menu_root"
+        />
+    </data>
+</odoo>

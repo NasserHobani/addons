@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="model_nfc_link_nfc_link" model="ir.model">
+            <field name="website_form_key">create_nfc</field>
+            <field name="website_form_default_field_id" ref="field_nfc_link_nfc_link__description" />
+            <field name="website_form_access">True</field>
+            <field name="website_form_label">Create an NFC</field>
+        </record>
+
+        <function model="ir.model.fields" name="formbuilder_whitelist">
+            <value>nfc_link.nfc_link</value>
+            <value eval="[
+                'nf_card_id',
+                'nf_qr_id',
+                'nf_type',
+                'action_type',
+                'instagram_user',
+                'whatsapp_user',
+                'instagram_link',
+                'whatspp_link',
+                'partner_id',
+            ]"/>
+        </function>
+
+    </data>
+</odoo>
