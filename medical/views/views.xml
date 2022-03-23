@@ -3,7 +3,7 @@
         <!-- explicit list view definition -->
         <record model="ir.ui.view" id="medical.form">
             <field name="name">medical form</field>
-            <field name="model">medical.medical</field>
+            <field name="model">medical.clinic_settings</field>
             <field name="arch" type="xml">
                 <form>
                     <sheet>
@@ -11,10 +11,10 @@
                             <field name="name"/>
                             <field name="code"/>
                             <field name="clinic_limit"/>
-                            <field name="covid_vaccine"/>
+                            <field name="vaccine" widget="many2many_tags"/>
                             <field name="chair_from"/>
                             <field name="chair_to"/>
-                            <field name="employee"/>
+                            <field name="employee_id"/>
                         </group>
                     </sheet>
                 </form>
@@ -22,14 +22,14 @@
         </record>
         <record model="ir.ui.view" id="medical.list">
             <field name="name">medical list</field>
-            <field name="model">medical.medical</field>
+            <field name="model">medical.clinic_settings</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
-                    <field name="employee"/>
+                    <field name="employee_id"/>
                     <field name="code"/>
                     <field name="clinic_limit"/>
-                    <field name="covid_vaccine"/>
+<!--                    <field name="vaccine"/>-->
                     <field name="chair_from"/>
                     <field name="chair_to"/>
                 </tree>
@@ -41,7 +41,7 @@
 
         <record model="ir.actions.act_window" id="medical.action_window">
             <field name="name">medical window</field>
-            <field name="res_model">medical.medical</field>
+            <field name="res_model">medical.clinic_settings</field>
             <field name="view_mode">tree,form</field>
         </record>
 
@@ -64,20 +64,9 @@
 
         <!-- Top menu item -->
 
-        <menuitem name="clinic" id="medical_clinic_menu" parent="medical.medical_config_menu"
+        <menuitem name="العيادات" id="medical_clinic_menu" parent="medical.medical_config_menu"
                   action="medical.action_window"/>
 
-        <!-- menu categories -->
-        <!--
-            <menuitem name="Menu 1" id="medical.menu_1" parent="medical.menu_root"/>
-            <menuitem name="Menu 2" id="medical.menu_2" parent="medical.menu_root"/>
-        -->
-        <!-- actions -->
-        <!--
-            <menuitem name="List" id="medical.menu_1_list" parent="medical.menu_1"
-                      action="medical.action_window"/>
-            <menuitem name="Server to list" id="medical" parent="medical.menu_2"
-                      action="medical.action_server"/>
-        -->
+
     </data>
 </odoo>

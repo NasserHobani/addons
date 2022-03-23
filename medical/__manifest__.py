@@ -24,11 +24,17 @@
 
     # always loaded
     'data': [
+
         'security/ir.model.access.csv',
         'security/access_right.xml',
         'views/menu.xml',
         'views/views.xml',
-        'views/templates.xml',
+        # 'views/templates.xml',
+        'views/vaccine.xml',
+        'views/patient.xml',
+        'views/vaccine_type.xml',
+        # 'action/action.xml',
+
     ],
     # only loaded in demonstration mode
     'demo': [

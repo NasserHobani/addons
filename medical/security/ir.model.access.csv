@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_medical_medical,medical.medical,model_medical_medical,base.group_user,1,1,1,1
+access_medical_clinic_settings,medical.clinic_settings,model_medical_clinic_settings,base.group_user,1,1,1,1
+access_medical_patient,medical.patient,model_medical_patient,base.group_user,1,1,1,1
+access_medical_vaccine_type_settings,medical.vaccine_type_settings,model_medical_vaccine_type_settings,base.group_user,1,1,1,1
+access_medical_vaccine_settings,medical.vaccine_settings,model_medical_vaccine_settings,base.group_user,1,1,1,1

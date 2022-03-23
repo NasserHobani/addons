@@ -1,0 +1,66 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="patient_form">
+            <field name="name">patient_form</field>
+            <field name="model">medical.patient</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button class="oe_highlight" type="object" name="find_chair" string="Find"
+                        />
+                        <field name="status" widget="statusbar"/>
+                    </header>
+                    <sheet>
+
+                        <group>
+                            <field name="name"/>
+                            <field name="login"/>
+                            <field name="in_the_clinic"/>
+                            <field name="finish"/>
+                            <field name="covid_vaccine"/>
+                            <field name="clinic_id"/>
+                            <field name="employee_id"/>
+                            <field name="chair_number"/>
+                            <field name="active"/>
+                            <field name="status"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="patient_list">
+            <field name="name">patient_list</field>
+            <field name="model">medical.patient</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="login"/>
+                    <field name="in_the_clinic"/>
+                    <field name="finish"/>
+                    <field name="covid_vaccine"/>
+                    <field name="clinic_id"/>
+                    <field name="employee_id"/>
+                    <field name="chair_number"/>
+                    <field name="active"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="medical_patient_patient">
+            <field name="name">patient_window</field>
+            <field name="res_model">medical.patient</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="المريض" id="medical.patient_menu" parent="medical.medical_config_menu"
+                  action="medical_patient_patient"/>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="vaccine_form">
+            <field name="name">vaccine form</field>
+            <field name="model">medical.vaccine_settings</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="type_id"/>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="vaccine_list">
+            <field name="name">vaccine_list</field>
+            <field name="model">medical.vaccine_settings</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="type_id"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="medical.vaccine_window">
+            <field name="name">vaccine window</field>
+            <field name="res_model">medical.vaccine_settings</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="جرعات اللقاحات" id="medical.vaccine_menu" parent="medical.medical_config_menu"
+                  action="medical.vaccine_window"/>
+
+
+    </data>
+</odoo>
